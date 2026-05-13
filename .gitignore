@@ -1,0 +1,16 @@
+# Environment
+.env
+
+# Database and generated data
+data/crm.db
+data/contacts.csv
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+dist/
+
+# Streamlit
+.streamlit/
