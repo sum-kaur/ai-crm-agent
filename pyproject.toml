@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ai-crm-agent"
-version = "0.1.0"
+version = "0.2.0"
 description = "AI-powered contact segmentation and personalised email automation"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -18,8 +18,14 @@ dependencies = [
     "click>=8.1.0",
 ]
 
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
 [project.scripts]
 crm-agent = "cli:cli"
 
 [tool.hatch.build.targets.wheel]
 packages = ["agent", "dashboard", "data"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
