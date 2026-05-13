@@ -82,7 +82,7 @@ class SegmentationEngine:
         self,
         client: anthropic.Anthropic,
         tracer: AgentTracer,
-        batch_size: int = 50,
+        batch_size: int = 25,
     ):
         self.client = client
         self.tracer = tracer
@@ -127,7 +127,7 @@ class SegmentationEngine:
         with self.tracer.trace("segmentation", input_summary) as entry:
             response = self.client.messages.create(
                 model=MODEL,
-                max_tokens=4096,
+                max_tokens=8192,
                 system=[
                     {
                         "type": "text",
